@@ -1,4 +1,12 @@
+* {
+    background-color: floralwhite;
+}
+
 .header {
-    background-color: aqua;
-    color: black;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 20px;
+    background-color: lightgray;
+    color: green;
 }

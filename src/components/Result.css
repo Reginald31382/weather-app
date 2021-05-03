@@ -1,4 +1,44 @@
 .results {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 2px auto;
+    font-weight: 500;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 12px;
+}
+
+h1 {
+    padding-right: 25px;
+}
+
+.top {
+    width: 200px;
+    height: 200px;
+}
+
+.description {
+    display: flex;
+}
+
+.temp {
+    display: flex;
+}
+
+.feel {
+    display: flex;
+}
+
+.wind {
+    display: flex;
+}
+
+strong {
+    padding: 5px;
+    line-height: 13px;
 }
