@@ -3,18 +3,18 @@ import Header from './components/Header'
 import Form from './components/Form'
 import Result from './components/Result'
 import { useState } from 'react'
+import {APIKEY} from './apis/config'
 
 
 function App() {
   const clickHandle = data => {('')}
   const [weather, setWeather] = useState([])
-  const [ showResult, setResult] = useState([])
-  const APIKEY = 'aa9b2583a44db40d6e82d314ffb3bd4e'
+  const [showResult, setResult] = useState([])  //showResult not working
   
-  function handleSubmit(e) {
-      e.preventDefault();
-      setResult((prev) => !prev);
-  }
+//   function handleSubmit(e) {
+//       e.preventDefault();
+//       setResult((prev) => !prev);
+//   }
 
     async function fetchData(e) {
         const city = e.target.elements.city.value
@@ -26,7 +26,7 @@ function App() {
             setWeather({
                 data: apiData,
                 name: apiData.name,
-                icon: apiData.icon,
+                icon: apiData.weather[0].icon,
                 description: apiData.weather[0].description,
                 temp: apiData.main.temp,                        //need to fix this formula with an const maybe..
                 feels_like: apiData.main.feels_like,            //const kelvinToFarenheit = (k) => {return(k-273.15).toFixed(2);};
@@ -59,7 +59,7 @@ function App() {
             feels_like={weather.feels_like}
             speed={weather.speed}
             error={weather.error}
-            handleSubmit={handleSubmit}
+            //handleSubmit={handleSubmit}
             />
             {console.log(weather.data)}
         </div>
